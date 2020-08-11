@@ -26,6 +26,7 @@ useEffect(() => {
     setDone(true)
    }).catch(err=>{
        console.log(err)
+        setDone(false)
    })
    axios.get('api/global', {
     headers: {
@@ -35,6 +36,7 @@ useEffect(() => {
  setDone(true)
 }).catch(err=>{
     console.log(err)
+       setDone(false)
 })
 }, [])
 
