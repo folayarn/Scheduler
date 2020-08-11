@@ -25,9 +25,10 @@ useEffect(() => {
     dispatch(getdata(res.data))
     setDone(true)
    }).catch(err=>{
-       console.log(err)
-        setDone(false)
+              setDone(false)
    })
+    
+    
    axios.get('api/global', {
     headers: {
         'Content-Type':'application/json' }
@@ -35,8 +36,7 @@ useEffect(() => {
  dispatch(getglobe(res.data))
  setDone(true)
 }).catch(err=>{
-    console.log(err)
-       setDone(false)
+      setDone(false)
 })
 }, [])
 
