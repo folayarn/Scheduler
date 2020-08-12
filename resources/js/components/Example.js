@@ -16,6 +16,7 @@ const store= createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && wind
 
  function Example() {
     const [done,setDone]=useState(false)
+     const [done2,setDone2]=useState(false)
 const dispatch =useDispatch()
 useEffect(() => {
     axios.get('api/country', {
@@ -23,9 +24,9 @@ useEffect(() => {
            'Content-Type':'application/json' }
    }).then(res=>{
     dispatch(getdata(res.data))
-    setDone(true)
+    setDone2(true)
    }).catch(err=>{
-              setDone(false)
+            console.log(err)  
    })
     
     
@@ -36,13 +37,13 @@ useEffect(() => {
  dispatch(getglobe(res.data))
  setDone(true)
 }).catch(err=>{
-      setDone(false)
+      console.log(err)
 })
 }, [])
 
 
 
-if(!done){
+if(!done && !done2){
     return (<Loading/>)
 }else{
     return (
